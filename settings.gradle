@@ -1,0 +1,2 @@
+rootProject.name = 'NarniaFestival'
+include 'narnia_mobile_app', "narnia_rest_api", "narnia_management"
