@@ -2,7 +2,7 @@ package it.geusa.narniarestapi.services;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
-import it.geusa.narniarestapi.models.User;
+import it.geusa.narniarestapi.model.User;
 import org.bson.Document;
 import org.bson.types.ObjectId;
 

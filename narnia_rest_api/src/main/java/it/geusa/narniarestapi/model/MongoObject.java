@@ -1,4 +1,4 @@
-package it.geusa.narniarestapi.models;
+package it.geusa.narniarestapi.model;
 
 import org.bson.Document;
 

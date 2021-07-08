@@ -20,6 +20,7 @@ dependencies {
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.3'
 
     implementation group: 'com.github.jnr', name: 'jnr-unixsocket', version: '0.38.1'
+    implementation 'org.projectlombok:lombok:1.18.18'
 
     testImplementation 'io.quarkus:quarkus-junit5'
     testImplementation 'io.rest-assured:rest-assured'
