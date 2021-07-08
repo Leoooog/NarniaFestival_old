@@ -1,4 +1,4 @@
-package it.geusa.narniarestapi.services;
+package it.geusa.narniarestapi.service;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
