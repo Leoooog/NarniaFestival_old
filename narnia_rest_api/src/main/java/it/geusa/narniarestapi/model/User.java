@@ -7,6 +7,7 @@ import org.bson.Document;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Value
@@ -38,6 +39,7 @@ public class User implements MongoObject {
     }
 
     private List<EventBooking> parseEventBookings(Document doc) {
+        if(!doc.containsKey("event_bookings")) return Collections.emptyList();
         List<EventBooking> eventBookings = new ArrayList<>();
         var eventBookingsDoc = doc.getList("event_bookings", Document.class);
         for (Document ebDoc : eventBookingsDoc) {
@@ -48,6 +50,7 @@ public class User implements MongoObject {
     }
 
     private List<FoodStamp> parseFoodStamps(Document doc) {
+        if(!doc.containsKey("food_stamps")) return Collections.emptyList();
         List<FoodStamp> foodStamps = new ArrayList<>();
         var foodStampsDoc = doc.getList("food_stamps", Document.class);
         for (Document ebDoc : foodStampsDoc) {
@@ -68,8 +71,10 @@ public class User implements MongoObject {
         doc.append("email_confirmed", emailConfirmed);
         doc.append("enabled", enabled);
         doc.append("profile_type", profileType);
-        doc.append("food_stamps", foodStamps);
-        doc.append("event_bookings", eventBookings);
+        if(!foodStamps.isEmpty())
+            doc.append("food_stamps", foodStamps);
+        if(!eventBookings.isEmpty())
+            doc.append("event_bookings", eventBookings);
         return doc;
     }
 }
